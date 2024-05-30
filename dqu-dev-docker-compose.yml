@@ -1,0 +1,28 @@
+version: '3.4'
+services:
+    api:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+    # image: devops1fin/customer:latest
+    # container name from the env_file supplied to docker-compose command
+    container_name: '${NEST_CONTAINER_NAME}'
+    restart: always
+    volumes:
+      - '${HOST_ROOT_VOL}/build/node_modules:/usr/src/app/node_modules'
+      - '${HOST_ROOT_VOL}/build/dist:/usr/src/app/dist'
+      - '${HOST_ROOT_VOL}/package.json:/usr/src/app/package.json'
+      - '${HOST_ROOT_VOL}/.env:/usr/src/app/.env'
+      - '${HOST_ROOT_VOL}/src/prisma/schema.prisma:/usr/src/app/src/prisma/schema.prisma'
+      - '${HOST_ROOT_VOL}/.well-known:/usr/src/app/.well-known'
+      - '${HOST_ROOT_VOL}/src/prisma/migrations:/usr/src/app/src/prisma/migrations'
+    ports:
+      - ${HOST_PORT}:3000
+    env_file:
+      - .env
+    networks:
+      docker_network: null
+
+networks:
+  docker_network:
+    external: true
