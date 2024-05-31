@@ -1,20 +1,14 @@
-import { Injectable } from "@nestjs/common";
-import { Extension } from "src/Filters/extension";
-
-
+import { Injectable } from '@nestjs/common';
+import { Extension } from 'src/Filters/extension';
 
 @Injectable()
 export class EmailService {
-    constructor(
-    ) { }
+  constructor() {}
 
-    async getEmailTemplates() {
-        // const data = await this.prismaService.sms_template.findMany();
-        //console.log(data);
-        // var response = Extension.jsonStringifyModifer(data);
-        return 'response';
-    }
+  async getEmailTemplates() {
+    // const data = await this.prismaService.sms_template.findMany();
+    //console.log(data);
+    // var response = Extension.jsonStringifyModifer(data);
+    return 'response';
+  }
 }
-
-
-
