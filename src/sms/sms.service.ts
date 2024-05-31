@@ -8,7 +8,7 @@ import {
 } from '../drizzle/netcore/schema/schema';
 import { eq, ne, sql } from 'drizzle-orm';
 import { NetCoreTemplateDC } from './sms.interface';
-import { SendSMSAsyncV2 } from '../helper/sms-helper';
+import { SendSMSAsyncV2 } from '../helpers/netcore_sms';
 import { NetCoreSequence } from 'src/util/enums/netcore-sequence.enum';
 
 @Injectable()
