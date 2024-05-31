@@ -10,11 +10,13 @@ import { SMSService } from './sms/sms.service';
 import { HttpModule } from '@nestjs/axios';
 import { DrizzlePostgresModule } from '@knaadh/nestjs-drizzle-postgres';
 import * as NetCoreSchema from './drizzle/netcore/schema/schema';
+import { SmsMsgModule } from './sms_msg/sms_msg.module';
 
 @Module({
   imports: [
     EmailModule,
     SMSModule,
+    SmsMsgModule,
     HttpModule,
     DrizzlePostgresModule.registerAsync({
       tag: 'NETCORE',
