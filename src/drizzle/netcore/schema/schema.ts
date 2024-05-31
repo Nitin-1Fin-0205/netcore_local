@@ -7,6 +7,7 @@ import {
   varchar,
   uuid,
 } from 'drizzle-orm/pg-core';
+import { sql } from 'drizzle-orm';
 
 export const Service_Priority = pgTable('Service_Priority', {
   // You can use { mode: "bigint" } if numbers are exceeding js number limitations
