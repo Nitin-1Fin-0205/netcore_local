@@ -7,11 +7,11 @@ import { EmailService } from './email/email.service';
 import { SMSModule } from './sms/sms.module';
 import { SMSController } from './sms/sms.controller';
 import { SMSService } from './sms/sms.service';
-
+import { SmsMsgModule } from './sms_msg/sms_msg.module';
 
 @Module({
-  imports: [EmailModule, SMSModule],
+  imports: [EmailModule, SMSModule, SmsMsgModule],
   controllers: [AppController, EmailController, SMSController],
   providers: [AppService, EmailService, SMSService],
 })
-export class AppModule { }
+export class AppModule {}
