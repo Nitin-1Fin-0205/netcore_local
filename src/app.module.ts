@@ -1,9 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EmailController } from './email/email.controller';
 import { EmailModule } from './email/email.module';
-import { EmailService } from './email/email.service';
 import { SMSModule } from './sms/sms.module';
 import { SMSController } from './sms/sms.controller';
 import { SMSService } from './sms/sms.service';
@@ -32,7 +30,7 @@ import { SmsMsgModule } from './sms_msg/sms_msg.module';
       },
     }),
   ],
-  controllers: [AppController, EmailController, SMSController],
-  providers: [AppService, EmailService, SMSService],
+  controllers: [AppController, SMSController],
+  providers: [AppService, SMSService],
 })
 export class AppModule {}
