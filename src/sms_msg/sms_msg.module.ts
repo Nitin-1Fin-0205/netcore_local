@@ -6,4 +6,4 @@ import { SmsMsgController } from './sms_msg.controller';
   controllers: [SmsMsgController],
   providers: [SmsMsgService],
 })
-export class SmsMsgModule { }
+export class SmsMsgModule {}

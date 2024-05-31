@@ -10,24 +10,24 @@ export async function SendSMSAsyncV2(obj) {
       jsonString =
         jsonString == ''
           ? '{' +
-          '"' +
-          i.toString() +
-          '"' +
-          ' : ' +
-          '"' +
-          obj.body_params[key] +
-          '"' +
-          ','
+            '"' +
+            i.toString() +
+            '"' +
+            ' : ' +
+            '"' +
+            obj.body_params[key] +
+            '"' +
+            ','
           : jsonString +
-          ' ' +
-          '"' +
-          i.toString() +
-          '"' +
-          ':' +
-          '"' +
-          obj.body_params[key] +
-          '"' +
-          ',';
+            ' ' +
+            '"' +
+            i.toString() +
+            '"' +
+            ':' +
+            '"' +
+            obj.body_params[key] +
+            '"' +
+            ',';
       i = i + 1;
     }
   }
@@ -59,4 +59,3 @@ export async function SendSMSAsyncV2(obj) {
 
   return response;
 }
-

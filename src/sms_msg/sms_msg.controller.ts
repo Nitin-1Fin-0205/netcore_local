@@ -7,7 +7,7 @@ import { ApiResponse } from 'src/helpers/ApiResponse';
 @ApiTags('SMSMSG')
 @Controller('api/netcore')
 export class SmsMsgController {
-  constructor(private readonly MSGSMSService: SmsMsgService) { }
+  constructor(private readonly MSGSMSService: SmsMsgService) {}
 
   @Post('/api/msg/message/sms')
   async MSG(@Body() objIC: MSG_IC) {
@@ -18,7 +18,13 @@ export class SmsMsgController {
       }
       return new ApiResponse(200, 'SUCCESS', '', '', data.data);
     } catch (error) {
-      return new ApiResponse(500, 'Something went wrong, please try again later', '', '', '');
+      return new ApiResponse(
+        500,
+        'Something went wrong, please try again later',
+        '',
+        '',
+        '',
+      );
     }
   }
 }

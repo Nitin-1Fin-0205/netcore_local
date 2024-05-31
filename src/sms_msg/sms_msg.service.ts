@@ -13,7 +13,7 @@ export class SmsMsgService {
   constructor(
     @Inject('NETCORE')
     private netcore: PostgresJsDatabase<typeof NETCORE_SCHEMA>,
-  ) { }
+  ) {}
 
   async SMSMSG(objIC) {
     const response = new ResponceOC();

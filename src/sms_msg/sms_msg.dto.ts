@@ -1,3 +1,1 @@
-export class MSG_IC {
-
-}
+export class MSG_IC {}

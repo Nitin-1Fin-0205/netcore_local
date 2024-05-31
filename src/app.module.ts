@@ -15,7 +15,8 @@ import { SmsMsgModule } from './sms_msg/sms_msg.module';
 @Module({
   imports: [
     EmailModule,
-    SMSModule, SmsMsgModule,
+    SMSModule,
+    SmsMsgModule,
     HttpModule,
     DrizzlePostgresModule.registerAsync({
       tag: 'NETCORE',
@@ -34,4 +35,4 @@ import { SmsMsgModule } from './sms_msg/sms_msg.module';
   controllers: [AppController, EmailController, SMSController],
   providers: [AppService, EmailService, SMSService],
 })
-export class AppModule { }
+export class AppModule {}
