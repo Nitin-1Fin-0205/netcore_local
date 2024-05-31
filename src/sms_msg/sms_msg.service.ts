@@ -6,15 +6,14 @@ import { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 import { eq } from 'drizzle-orm';
 import { MSGTemplate_DC } from 'src/helpers/model/msg_template_model';
 import { Report, SMS_MSG_IC } from 'src/helpers/model/sms_msg_ic_model';
-import { SMSMSG } from 'src/helpers/sms_msg';
+import { SendSMSAsyncV2 } from 'src/helpers/sms_msg';
 
 @Injectable()
 export class SmsMsgService {
   constructor(
-    @Inject('NetCore')
+    @Inject('NETCORE')
     private netcore: PostgresJsDatabase<typeof NETCORE_SCHEMA>,
-    private readonly smsmsgHelper: SMSMSG,
-  ) {}
+  ) { }
 
   async SMSMSG(objIC) {
     const response = new ResponceOC();
@@ -91,9 +90,9 @@ export class SmsMsgService {
     obj.mobile = `91${objIC.mobile}`;
     obj.template_id = templateData[0].template_id;
 
-    const resObj = await this.smsmsgHelper.SendSMSAsyncV2(obj);
+    const resObj = await SendSMSAsyncV2(obj);
     const dResponse = resObj.data;
-    
+
     const ip = new SMS_MSG_IC();
     const objIp = new Report();
     // objIp.desc = dResponse.type; ?
