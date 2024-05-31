@@ -1,10 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { Extension } from "src/Filters/extension";
-
-
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SMSService {
-    constructor(
-    ) { }
+  constructor() {}
 }

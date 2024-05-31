@@ -1,21 +1,19 @@
 // #region Output DTO
 
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
-class SMSIp{
-    @ApiProperty() mobileNumber : String = '';
-    @ApiProperty() message : String = '';
-    @ApiProperty() templateId : number = 0;
-    @ApiProperty() variables : Array<String> = [];
-    @ApiProperty() otp : String = '';
-    @ApiProperty() requestId : String = '';
+class SMSIp {
+  @ApiProperty() mobileNumber: string = '';
+  @ApiProperty() message: string = '';
+  @ApiProperty() templateId: number = 0;
+  @ApiProperty() variables: Array<string> = [];
+  @ApiProperty() otp: string = '';
+  @ApiProperty() requestId: string = '';
 }
 
-export{ SMSIp }
+export { SMSIp };
 
 // #endregion
-
-
 
 // #region Output DTO
 // #endregion
