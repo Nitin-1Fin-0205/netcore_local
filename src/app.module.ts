@@ -9,6 +9,7 @@ import { HttpModule } from '@nestjs/axios';
 import { DrizzlePostgresModule } from '@knaadh/nestjs-drizzle-postgres';
 import * as NetCoreSchema from './drizzle/netcore/schema/schema';
 import { SmsMsgModule } from './sms_msg/sms_msg.module';
+import { ActivityModule } from './activity/activity.module';
 
 @Module({
   imports: [
